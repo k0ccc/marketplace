@@ -1,7 +1,7 @@
 In this project im using external libs: nuxt/ui for tailwindcss and prisma for database.
 
 
-migration and seeding of Prisma 
+migration and seeding of Prisma if db is not exist
 
 ```bash
 # sync schema to DB
