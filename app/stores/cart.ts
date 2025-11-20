@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { Product } from "~/types/templatePrisma";
+import type { Product } from "@prisma/client";
 
 export interface CartItem {
   product: Product;
