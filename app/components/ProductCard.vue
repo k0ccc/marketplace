@@ -9,7 +9,7 @@
         <NuxtLink :to="`/product/${product.id}`" class="text-blue-500 hover:underline">Подробнее</NuxtLink>
       </div>
       <button 
-        class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+        class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition cursor-pointer"
         @click="cartStore.addToCart(product)"
       >
         В корзину
