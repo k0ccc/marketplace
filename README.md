@@ -1,88 +1,58 @@
-In this project im using external libs: nuxt/ui for tailwindcss and prisma for database.
+# Nuxt 3 Marketplace
 
+Тестовое задание: реализация маркетплейса на Nuxt 3 с использованием SSR, TypeScript и серверного API (Nitro).
 
-migration and seeding of Prisma if db is not exist
+## 🛠 Стек технологий
 
-```bash
-# sync schema to DB
-npx prisma db push 
-# seeding bd, may need    
-# npm i -D tsx
- 
-npx prisma db seed
-```
-# Nuxt Minimal Starter
+*   **Framework:** Nuxt 3
+*   **Language:** TypeScript
+*   **Styling:** Tailwind CSS (via `@nuxtjs/tailwindcss`)
+*   **State Management:** Pinia (Store для корзины)
+*   **Backend / Database:** Nitro + Prisma ORM + SQLite (Bonus task implementation)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 🚀 Функционал
 
-## Setup
+1.  **Каталог товаров:**
+    *   Серверный рендеринг (SSR).
+    *   Пагинация, сортировка и фильтрация (по категории, цвету, материалу) работают на стороне сервера.
+2.  **Детальная страница:**
+    *   SSR, динамическая подгрузка данных через API.
+    *   Кнопка добавления в корзину.
+3.  **Корзина и оформление:**
+    *   Управление состоянием корзины (Pinia).
+    *   Имитация оформления заказа через API (`POST /api/order`).
+4.  **База данных:**
+    *   Использована `SQLite` для хранения данных.
+    *   Реализован скрипт наполнения (seeding) мок-данными.
 
-Make sure to install dependencies:
+## 📦 Установка и запуск
 
-```bash
-# npm
-npm install
+1.  **Установите зависимости:**
+    ```bash
+    npm install
+    ```
 
-# pnpm
-pnpm install
+2.  **Настройка базы данных:**
+    В проекте используется SQLite. Необходимо создать файл БД(если его нет) и наполнить его тестовыми данными.
 
-# yarn
-yarn install
+    ```bash
+    # Создание файла .env (если нет)
+    echo "DATABASE_URL=\"file:./dev.db\"" > .env
 
-# bun
-bun install
-```
+    # Применение схемы базы данных
+    npx prisma db push
 
-## Development Server
+    # Наполнение базы тестовыми товарами (Seeding)
+    npx prisma db seed
+    ```
 
-Start the development server on `http://localhost:3000`:
+3.  **Запуск проекта:**
+    ```bash
+    npm run dev
+    ```
+    Проект будет доступен по адресу: http://localhost:3000
 
-```bash
-# npm
-npm run dev
+## 💡 Архитектурные решения
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+*   **Data Fetching:** Используется `useFetch` с реактивными параметрами для полной поддержки SSR и SEO.
+*   **API:** Все запросы к данным проходят через серверный слой Nitro, имитируя реальную микросервисную архитектуру.
