@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex flex-col">
-    <img :src="product.image" :alt="product.title" class="w-full h-48 object-cover" />
+    <img :src="product.image" :alt="product.title" class="w-full h-48 object-cover" >
     <div class="p-4 flex flex-col flex-grow">
       <h3 class="text-lg font-semibold mb-1">{{ product.title }}</h3>
       <p class="text-gray-500 text-sm mb-2 line-clamp-2">{{ product.description }}</p>
