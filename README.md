@@ -1,5 +1,16 @@
 In this project im using external libs: nuxt/ui for tailwindcss and prisma for database.
 
+
+migration and seeding of Prisma 
+
+```bash
+# sync schema to DB
+npx prisma db push 
+# seeding bd, may need    
+# npm i -D tsx
+ 
+npx prisma db seed
+```
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
